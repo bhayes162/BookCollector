@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Book Collector-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="BookCollector" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,10 +36,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="3oz-FS-oki" secondAttribute="trailing" id="y6l-d8-YYk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="97p-f6-egJ">
+                    <navigationItem key="navigationItem" title="Book Collector" id="97p-f6-egJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ON7-Hg-KgF">
                             <connections>
-                                <segue destination="WfG-dD-znm" kind="show" id="boL-64-HgY"/>
+                                <segue destination="WfG-dD-znm" kind="show" identifier="bookSegue" id="boL-64-HgY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="1046" y="793"/>
         </scene>
-        <!--Book View Controller-->
+        <!--Book-->
         <scene sceneID="dSW-cq-vkT">
             <objects>
                 <viewController id="WfG-dD-znm" customClass="BookViewController" customModule="BookCollector" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,6 +83,14 @@
                                     <action selector="addTapped:" destination="WfG-dD-znm" eventType="touchUpInside" id="x9v-a7-qcr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDD-es-aKF">
+                                <rect key="frame" x="165" y="384" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="WfG-dD-znm" eventType="touchUpInside" id="A5K-rJ-852"/>
+                                    <action selector="deleteTapped:" destination="WfG-dD-znm" eventType="touchUpInside" id="LYG-ek-xXg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -93,11 +101,13 @@
                             <constraint firstItem="ZH3-HM-kne" firstAttribute="centerX" secondItem="gB0-nw-duL" secondAttribute="centerX" constant="-0.5" id="Zmi-R0-b4W"/>
                             <constraint firstItem="AHJ-W3-LnS" firstAttribute="top" secondItem="ZH3-HM-kne" secondAttribute="bottom" constant="30" id="bIC-8m-pRv"/>
                             <constraint firstItem="B1A-JT-VL8" firstAttribute="top" secondItem="Lw8-XG-hfR" secondAttribute="bottom" constant="20" id="bk8-Vk-b0A"/>
+                            <constraint firstItem="pDD-es-aKF" firstAttribute="top" secondItem="AHJ-W3-LnS" secondAttribute="bottom" constant="30" id="crc-Ef-1bj"/>
                             <constraint firstItem="ZH3-HM-kne" firstAttribute="centerX" secondItem="gB0-nw-duL" secondAttribute="centerX" id="wBa-eg-KEF"/>
                             <constraint firstItem="AHJ-W3-LnS" firstAttribute="centerX" secondItem="gB0-nw-duL" secondAttribute="centerX" id="wPv-Wm-gPP"/>
+                            <constraint firstItem="pDD-es-aKF" firstAttribute="centerX" secondItem="gB0-nw-duL" secondAttribute="centerX" id="xRr-bj-llU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Trf-Ok-lKJ">
+                    <navigationItem key="navigationItem" title="Book" id="Trf-Ok-lKJ">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="camera" id="78d-4e-fFp">
                                 <connections>
@@ -112,7 +122,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="AHJ-W3-LnS" id="gSu-hP-gkn"/>
                         <outlet property="bookImageView" destination="B1A-JT-VL8" id="yuf-Ip-ORs"/>
+                        <outlet property="deleteButton" destination="pDD-es-aKF" id="z3I-xG-6Ws"/>
                         <outlet property="titleTextField" destination="ZH3-HM-kne" id="xxR-eA-Sht"/>
                     </connections>
                 </viewController>

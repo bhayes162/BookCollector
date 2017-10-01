@@ -45,5 +45,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let book = books[indexPath.row]
+        performSegue(withIdentifier: "bookSegue", sender: book)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! BookViewController
+        nextVC.book = sender as? Book
+    }
+    
 }
 
