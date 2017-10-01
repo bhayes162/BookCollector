@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Pgh-sh-JwF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="BookCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,124 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3oz-FS-oki">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3oz-FS-oki" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SCZ-gk-LNS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3oz-FS-oki" secondAttribute="bottom" id="bds-gy-JYm"/>
+                            <constraint firstItem="3oz-FS-oki" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="p2j-EA-mhC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3oz-FS-oki" secondAttribute="trailing" id="y6l-d8-YYk"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="97p-f6-egJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ON7-Hg-KgF">
+                            <connections>
+                                <segue destination="WfG-dD-znm" kind="show" id="boL-64-HgY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="3oz-FS-oki" id="3hP-Qq-bej"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1046" y="793"/>
+        </scene>
+        <!--Book View Controller-->
+        <scene sceneID="dSW-cq-vkT">
+            <objects>
+                <viewController id="WfG-dD-znm" customClass="BookViewController" customModule="BookCollector" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lw8-XG-hfR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nrb-ke-bx2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gB0-nw-duL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseballhacks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="B1A-JT-VL8">
+                                <rect key="frame" x="47" y="84" width="280" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="548-BY-vE7"/>
+                                    <constraint firstAttribute="width" constant="280" id="Ya9-Ms-LYe"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZH3-HM-kne">
+                                <rect key="frame" x="47" y="264" width="280" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHJ-W3-LnS">
+                                <rect key="frame" x="172.5" y="324" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="WfG-dD-znm" eventType="touchUpInside" id="x9v-a7-qcr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B1A-JT-VL8" firstAttribute="top" secondItem="Lw8-XG-hfR" secondAttribute="bottom" constant="20" id="Nya-Ty-2Db"/>
+                            <constraint firstItem="ZH3-HM-kne" firstAttribute="width" secondItem="B1A-JT-VL8" secondAttribute="width" id="QIS-xb-ogh"/>
+                            <constraint firstItem="ZH3-HM-kne" firstAttribute="top" secondItem="B1A-JT-VL8" secondAttribute="bottom" constant="30" id="TKL-Si-tOg"/>
+                            <constraint firstItem="B1A-JT-VL8" firstAttribute="centerX" secondItem="gB0-nw-duL" secondAttribute="centerX" id="TqN-lW-hMn"/>
+                            <constraint firstItem="ZH3-HM-kne" firstAttribute="centerX" secondItem="gB0-nw-duL" secondAttribute="centerX" constant="-0.5" id="Zmi-R0-b4W"/>
+                            <constraint firstItem="AHJ-W3-LnS" firstAttribute="top" secondItem="ZH3-HM-kne" secondAttribute="bottom" constant="30" id="bIC-8m-pRv"/>
+                            <constraint firstItem="B1A-JT-VL8" firstAttribute="top" secondItem="Lw8-XG-hfR" secondAttribute="bottom" constant="20" id="bk8-Vk-b0A"/>
+                            <constraint firstItem="ZH3-HM-kne" firstAttribute="centerX" secondItem="gB0-nw-duL" secondAttribute="centerX" id="wBa-eg-KEF"/>
+                            <constraint firstItem="AHJ-W3-LnS" firstAttribute="centerX" secondItem="gB0-nw-duL" secondAttribute="centerX" id="wPv-Wm-gPP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Trf-Ok-lKJ">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="78d-4e-fFp">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="WfG-dD-znm" id="ur5-3Q-Yk9"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="r2M-OW-d1Y">
+                                <connections>
+                                    <action selector="photosTapped:" destination="WfG-dD-znm" id="BE7-j3-ybH"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bookImageView" destination="B1A-JT-VL8" id="yuf-Ip-ORs"/>
+                        <outlet property="titleTextField" destination="ZH3-HM-kne" id="xxR-eA-Sht"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yF4-55-VwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877.5999999999999" y="792.95352323838085"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TSy-ST-NaZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pgh-sh-JwF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XhM-ye-TTq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ci0-en-sJ7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Lq-AS-ocY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="792.95352323838085"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="baseballhacks.jpg" width="3024" height="4032"/>
+    </resources>
 </document>

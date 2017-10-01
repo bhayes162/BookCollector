@@ -13,6 +13,8 @@
 		1BE28D1D1F813423000CB4DC /* BookCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1BE28D1B1F813423000CB4DC /* BookCollector.xcdatamodeld */; };
 		1BE28D1F1F813423000CB4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BE28D1E1F813423000CB4DC /* Assets.xcassets */; };
 		1BE28D221F813423000CB4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BE28D201F813423000CB4DC /* LaunchScreen.storyboard */; };
+		1BE28D2A1F813B76000CB4DC /* baseballhacks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BE28D291F813B76000CB4DC /* baseballhacks.jpg */; };
+		1BE28D2C1F813CAD000CB4DC /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE28D2B1F813CAD000CB4DC /* BookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1BE28D1E1F813423000CB4DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BE28D211F813423000CB4DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BE28D231F813423000CB4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BE28D291F813B76000CB4DC /* baseballhacks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = baseballhacks.jpg; sourceTree = "<group>"; };
+		1BE28D2B1F813CAD000CB4DC /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				1BE28D141F813423000CB4DC /* AppDelegate.swift */,
 				1BE28D161F813423000CB4DC /* ViewController.swift */,
+				1BE28D2B1F813CAD000CB4DC /* BookViewController.swift */,
 				1BE28D181F813423000CB4DC /* Main.storyboard */,
 				1BE28D1E1F813423000CB4DC /* Assets.xcassets */,
 				1BE28D201F813423000CB4DC /* LaunchScreen.storyboard */,
 				1BE28D231F813423000CB4DC /* Info.plist */,
 				1BE28D1B1F813423000CB4DC /* BookCollector.xcdatamodeld */,
+				1BE28D291F813B76000CB4DC /* baseballhacks.jpg */,
 			);
 			path = BookCollector;
 			sourceTree = "<group>";
@@ -127,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BE28D221F813423000CB4DC /* LaunchScreen.storyboard in Resources */,
+				1BE28D2A1F813B76000CB4DC /* baseballhacks.jpg in Resources */,
 				1BE28D1F1F813423000CB4DC /* Assets.xcassets in Resources */,
 				1BE28D1A1F813423000CB4DC /* Main.storyboard in Resources */,
 			);
@@ -140,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BE28D171F813423000CB4DC /* ViewController.swift in Sources */,
+				1BE28D2C1F813CAD000CB4DC /* BookViewController.swift in Sources */,
 				1BE28D151F813423000CB4DC /* AppDelegate.swift in Sources */,
 				1BE28D1D1F813423000CB4DC /* BookCollector.xcdatamodeld in Sources */,
 			);
